@@ -1,12 +1,11 @@
 var expect = require('chai').expect;
-var Lynx = require('lynx');
-var expressStatsd = require('../lib/express-statsd');
+var expressStatsd = require('../lib/express-hot-shots');
 var utils = require('./utils');
 
 describe('An express server', function () {
   utils.runStatsd();
 
-  describe('with express-statsd', function () {
+  describe('with express-hot-shots', function () {
     describe('receiving a request', function () {
       utils.runServer(1337, [
         expressStatsd(),
@@ -98,29 +97,9 @@ describe('An express server', function () {
         expect(this.messages[1]).to.match(/^my-key\.response_time:\d|ms$/);
       });
     });
-
-    describe('receiving a request with a custom lynx', function () {
-      utils.runServer(1337, [
-        function (req, res, next) {
-          req.statsdKey = 'my-key';
-          next();
-        },
-        expressStatsd({client: new Lynx('127.0.0.1', 8125, {scope: 'my-scope'})}),
-        function (req, res) {
-          res.send(200);
-        }
-      ]);
-      utils.saveRequest('http://localhost:1337');
-      utils.getStatsdMessages();
-
-      it('should use the custom lynx client', function () {
-        expect(this.messages[0]).to.match(/^my-scope\.my-key\.status_code\.200:\d\|c$/);
-        expect(this.messages[1]).to.match(/^my-scope\.my-key\.response_time:\d|ms$/);
-      });
-    });
   });
 
-  describe('without express-statsd receiving a request', function () {
+  describe('without express-hot-shots receiving a request', function () {
     utils.runServer(1337, [
       function (req, res) {
         res.send(200);

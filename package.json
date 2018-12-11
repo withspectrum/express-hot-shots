@@ -1,36 +1,33 @@
 {
-  "name": "express-statsd",
+  "name": "express-hot-shots",
   "description": "Statsd route monitoring middleware for connect/express",
-  "version": "0.3.0",
-  "homepage": "https://github.com/uber/express-statsd",
+  "version": "1.0.0",
+  "homepage": "https://github.com/withspectrum/express-hot-shots",
   "author": {
-    "name": "Matt Morgan",
-    "email": "matt@mlmorg.com",
-    "url": "http://mlmorg.com"
+    "name": "Max Stoiber"
   },
   "keywords": [
     "connect",
     "express",
     "statsd",
-    "lynx",
     "monitoring"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/uber/express-statsd.git"
+    "url": "git://github.com/withspectrum/express-hot-shots.git"
   },
   "bugs": {
-    "url": "https://github.com/uber/express-statsd/issues"
+    "url": "https://github.com/withspectrum/express-hot-shots/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/uber/express-statsd/blob/master/LICENSE"
+      "url": "https://github.com/withspectrum/express-hot-shots/blob/master/LICENSE"
     }
   ],
-  "main": "lib/express-statsd",
+  "main": "lib/express-hot-shots",
   "dependencies": {
-    "lynx": "^0.2.0",
+    "hot-shots": "^5.9.2",
     "obj-extend": "~0.1.0"
   },
   "devDependencies": {
