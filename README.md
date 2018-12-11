@@ -122,6 +122,7 @@ expressStatsd(options);
 ```
 
 - **options** `Object` - Container for settings
-  - **hotShots** `Object` - The hotShots options
+  - **client** `HotShots instance` - a custom hot shots instance
+  - **hotShots** `Object` - The hotShots options if you don't want to provide your own instance
   - **requestKey** `String` - The key on the `req` object at which to grab
 the key for the statsd logs. Defaults to `req.statsdKey`.
