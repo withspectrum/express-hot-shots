@@ -1,7 +1,7 @@
 {
   "name": "express-hot-shots",
   "description": "Statsd route monitoring middleware for connect/express",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/withspectrum/express-hot-shots",
   "author": {
     "name": "Max Stoiber"
